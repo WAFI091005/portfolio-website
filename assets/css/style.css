@@ -1,0 +1,255 @@
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap'); /* Changed Poppins to Inter for a cleaner, modern look */
+        
+        body {
+            font-family: 'Inter', sans-serif; /* Applied Inter font */
+            overflow-x: hidden;
+            color: #e0e0e0;
+            line-height: 1.75; /* Slightly increased line height */
+        }
+        
+        h1, h2, h3, .tech-stack-title { /* Added class for tech stack title */
+            font-family: 'Orbitron', sans-serif;
+            letter-spacing: 0.04em; /* Slightly reduced letter spacing for better readability */
+        }
+        
+        .gradient-text {
+            background: linear-gradient(90deg, #00dbde, #fc00ff);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            display: inline-block; /* Ensures gradient applies consistently */
+        }
+        
+        .card {
+            backdrop-filter: blur(20px); /* Increased blur significantly */
+            background: rgba(15, 23, 42, 0.5); /* More transparent background */
+            border: 1px solid rgba(255, 255, 255, 0.1); /* Subtler border */
+            transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); /* Smoother bezier transition */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle initial shadow */
+        }
+        
+        .card:hover {
+            transform: translateY(-15px) scale(1.01); /* More lift, subtle scale */
+            box-shadow: 0 25px 50px -12px rgba(124, 58, 237, 0.4), 0 10px 20px -5px rgba(124, 58, 237, 0.2); /* Stronger, broader glow */
+            border-color: rgba(124, 58, 237, 0.5); /* Border glows on hover */
+        }
+        
+        .skill-bar {
+            height: 10px; /* Thicker skill bar */
+            border-radius: 5px;
+            background: rgba(255, 255, 255, 0.15);
+            overflow: hidden;
+        }
+        
+        .skill-progress {
+            height: 100%;
+            background: linear-gradient(90deg, #00dbde, #fc00ff);
+            transition: width 1.5s ease-in-out; /* Even slower, more impactful animation */
+        }
+        
+        .floating {
+            animation: floating 8s ease-in-out infinite; /* Slower, more graceful float */
+        }
+        
+        @keyframes floating {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-25px); } /* Increased float distance */
+            100% { transform: translateY(0px); }
+        }
+        
+        .glow {
+            box-shadow: 0 0 25px rgba(124, 58, 237, 0.7); /* Stronger initial glow */
+        }
+        
+        .tech-icon {
+            transition: all 0.3s ease-out; /* Softer transition */
+            color: #c9c9c9; /* Lighter default icon color */
+        }
+        
+        .tech-icon:hover {
+            transform: scale(1.4); /* More pronounced scale */
+            filter: drop-shadow(0 0 12px var(--icon-hover-color, rgba(124, 58, 237, 0.9))); /* Stronger drop shadow */
+            color: var(--icon-hover-color);
+        }
+
+        /* Specific tech icon hover colors */
+        .tech-icon[title="Laravel"]:hover { --icon-hover-color: #ef3b2d; }
+        .tech-icon[title="React"]:hover { --icon-hover-color: #61dafb; }
+        .tech-icon[title="JavaScript"]:hover { --icon-hover-color: #f7df1e; }
+        .tech-icon[title="PHP"]:hover { --icon-hover-color: #777bb4; }
+        .tech-icon[title="HTML5"]:hover { --icon-hover-color: #e34c26; }
+        .tech-icon[title="CSS3"]:hover { --icon-hover-color: #264de4; }
+        .tech-icon[title="Git"]:hover { --icon-hover-color: #f1502f; }
+        .tech-icon[title="GitHub"]:hover { --icon-hover-color: #ffffff; }
+        .tech-icon[title="MySQL"]:hover { --icon-hover-color: #00758f; }
+        .tech-icon[title="Tailwind CSS"]:hover { --icon-hover-color: #38b2ac; }
+        .tech-icon[title="Node.js"]:hover { --icon-hover-color: #339933; } /* Added Node.js */
+        .tech-icon[title="Firebase"]:hover { --icon-hover-color: #ffca28; } /* Added Firebase */
+        
+        .section-title {
+            position: relative;
+            display: inline-block;
+            padding-bottom: 10px; /* More space for the underline */
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            width: 70%; /* Shorter underline for focus */
+            height: 5px; /* Thicker underline */
+            bottom: 0px;
+            left: 15%; /* Centered */
+            background: linear-gradient(90deg, #00dbde, #fc00ff);
+            border-radius: 3px;
+            transform-origin: center; /* For potential future scale animation */
+        }
+        
+        #vanta-bg {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            opacity: 0.7; /* Slightly more transparent Vanta */
+        }
+        
+        .timeline-item {
+            position: relative;
+            padding-left: 4rem; /* More space from the line */
+            margin-bottom: 3.5rem; /* Increased margin */
+        }
+        
+        .timeline-item:before {
+            content: '';
+            position: absolute;
+            left: 0.875rem; /* Adjusted to align with dot center */
+            top: 0;
+            height: 100%;
+            width: 3px;
+            background: linear-gradient(to bottom, #00dbde, #fc00ff);
+            border-radius: 1.5px;
+        }
+        
+        .timeline-dot {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 2rem; /* Even larger dot */
+            height: 2rem;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #00dbde, #fc00ff);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 0 12px rgba(0, 219, 222, 0.8), 0 0 12px rgba(252, 0, 255, 0.8); /* Stronger dot glow */
+            border: 2px solid rgba(255, 255, 255, 0.2); /* Added border to dot */
+        }
+
+        /* Mobile Menu styles */
+        #mobile-menu {
+            transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); /* Smoother menu animation */
+            transform: translateX(100%);
+        }
+        #mobile-menu.open {
+            transform: translateX(0);
+        }
+
+        /* Input focus glow */
+        input:focus, textarea:focus {
+            box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.5); /* Consistent glow on focus */
+            border-color: #8b5cf6;
+        }
+
+        /* Generic Button Style */
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem 2rem; /* Adjusted padding */
+            font-weight: 600; /* Semibold */
+            border-radius: 0.5rem; /* Rounded */
+            text-align: center;
+            transition: all 0.3s ease-in-out;
+            border: none;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .btn-gradient {
+            background: linear-gradient(90deg, #8b5cf6, #fc00ff); /* Adjusted primary gradient */
+            color: white;
+            box-shadow: 0 8px 15px rgba(124, 58, 237, 0.3);
+        }
+
+        .btn-gradient:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 12px 20px rgba(124, 58, 237, 0.4);
+            background: linear-gradient(90deg, #fc00ff, #00dbde); /* Reverse gradient on hover */
+        }
+
+        .btn-outline {
+            border: 2px solid #8b5cf6; /* Stronger outline */
+            color: #8b5cf6;
+            background: transparent;
+        }
+
+        .btn-outline:hover {
+            background: rgba(124, 58, 237, 0.2); /* Subtle fill on hover */
+            transform: translateY(-3px) scale(1.02);
+            color: #fff;
+            border-color: #00dbde;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeInRight {
+            from { opacity: 0; transform: translateX(30px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        @keyframes fadeInLeft {
+            from { opacity: 0; transform: translateX(-30px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        .animated-section {
+            opacity: 0; /* Hidden by default */
+            transform: translateY(30px); /* Initial state for fadeInUp */
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        .animated-section.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .animated-left {
+            opacity: 0;
+            transform: translateX(-30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        .animated-left.is-visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .animated-right {
+            opacity: 0;
+            transform: translateX(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        .animated-right.is-visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        /* Specific animations for elements */
+        .hero-title { animation-delay: 0.3s; }
+        .hero-subtitle { animation-delay: 0.5s; }
+        .hero-text { animation-delay: 0.7s; }
+        .hero-buttons { animation-delay: 0.9s; }
+        .hero-avatar { animation-delay: 1.1s; }
